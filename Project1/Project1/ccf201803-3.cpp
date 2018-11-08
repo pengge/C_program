@@ -12,7 +12,7 @@ typedef struct Node {
 
 Node *getNewNode(const char *str) {
 	Node *p = (Node *)malloc(sizeof(Node));
-	p->str = strdup(str);
+	//p->str = strdup(str);
 	p->type = 0;
 	if (strcmp(str, "<int>") == 0) {
 		p->type = 1;
@@ -111,7 +111,7 @@ int main() {
 			cout << "404" << endl;
 		}
 		else {
-			cout<<names[i];
+			cout << names[i];
 			output(rules[i], ret);
 		}
 	}

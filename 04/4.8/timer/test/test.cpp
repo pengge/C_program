@@ -11,7 +11,7 @@ void ShowClock()								// 显示电子时钟
 	{
 		for (;second<=60;second++)
 		{
-			for (delay=0;delay<=240000000;delay++) 
+			for (delay=0;delay<=480000000;delay++) 
 			{
 				continue;		// 延时时间，此处根据CPU的时钟频率，设置延时时间
 			}   

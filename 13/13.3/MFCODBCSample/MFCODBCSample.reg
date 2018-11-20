@@ -1,0 +1,13 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\MFCODBCSample.Document = MFCODB Document
+HKEY_CLASSES_ROOT\MFCODBCSample.Document\CLSID = {3EA49C1F-4228-4711-8311-00AC9CF03F1F}
+
+HKEY_CLASSES_ROOT\CLSID\{3EA49C1F-4228-4711-8311-00AC9CF03F1F} = MFCODB Document
+HKEY_CLASSES_ROOT\CLSID\{3EA49C1F-4228-4711-8311-00AC9CF03F1F}\ProgId = MFCODBCSample.Document
+HKEY_CLASSES_ROOT\CLSID\{3EA49C1F-4228-4711-8311-00AC9CF03F1F}\LocalServer32 = MFCODBCSAMPLE.EXE

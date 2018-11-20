@@ -1,0 +1,42 @@
+// MFCODBCSample.odl : type library source for MFCODBCSample.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (MFCODBCSample.tlb).
+
+[ uuid(91D6CBB4-1B63-4240-B726-1B447B2DD61F), version(1.0) ]
+library MFCODBCSample
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CMFCODBCSampleDoc
+	
+	[ uuid(6E0CFE89-9B0F-4015-9241-64E0AD96F215) ]
+	dispinterface IMFCODBCSample
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CMFCODBCSampleDoc)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CMFCODBCSampleDoc)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CMFCODBCSampleDoc
+	
+	[ uuid(3EA49C1F-4228-4711-8311-00AC9CF03F1F) ]
+	coclass Document
+	{
+		[default] dispinterface IMFCODBCSample;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

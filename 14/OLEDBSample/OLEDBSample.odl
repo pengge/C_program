@@ -1,0 +1,42 @@
+// OLEDBSample.odl : type library source for OLEDBSample.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (OLEDBSample.tlb).
+
+[ uuid(9F9EE617-13F9-4769-AC9D-D0E610903809), version(1.0) ]
+library OLEDBSample
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for COLEDBSampleDoc
+	
+	[ uuid(DB73D1EA-0D88-4E33-BDDB-C398FFBDA085) ]
+	dispinterface IOLEDBSample
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(COLEDBSampleDoc)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(COLEDBSampleDoc)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for COLEDBSampleDoc
+	
+	[ uuid(FB526224-2A91-42BC-BCCD-F574DD926D4C) ]
+	coclass Document
+	{
+		[default] dispinterface IOLEDBSample;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

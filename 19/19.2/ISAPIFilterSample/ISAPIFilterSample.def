@@ -1,0 +1,7 @@
+; ISAPIFILTERSAMPLE.def : declares the module parameters for the DLL.
+
+LIBRARY	     "ISAPIFILTERSAMPLE"
+
+EXPORTS
+	HttpFilterProc
+	GetFilterVersion

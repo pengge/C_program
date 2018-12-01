@@ -1,0 +1,20 @@
+// COMSample.idl : IDL source for COMSample.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (COMSample.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(EBE047D8-A90E-44CB-8377-87973F4B4766),
+	version(1.0),
+	helpstring("COMSample 1.0 Type Library")
+]
+library COMSAMPLELib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+};

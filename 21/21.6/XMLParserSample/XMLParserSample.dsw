@@ -1,0 +1,33 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "XMLParserSample"=".\XMLParserSample.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    XMLParserSample
+    ..\..\..\..\..\..\..\书籍\vc++6.0开发大全\vc60编写\过程\示例\第二十二章\xmlparsersample
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

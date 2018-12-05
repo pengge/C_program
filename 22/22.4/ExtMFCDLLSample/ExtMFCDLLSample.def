@@ -1,0 +1,7 @@
+; ExtMFCDLLSample.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ExtMFCDLLSample"
+DESCRIPTION  'ExtMFCDLLSample Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

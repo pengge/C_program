@@ -1,0 +1,106 @@
+#include "SR04.h"
+#include <LCD.h>
+#define TRIG_PIN 2
+#define ECHO_PIN 3
+int beeppin = 8; 
+//int i = 0;
+SR04 sr04 = SR04(ECHO_PIN,TRIG_PIN);
+long a;
+LCD lcd(31, 32, 33);
+char str1[] = "cm";
+char str2[] = "chao ju      ";
+void setup() {
+   Serial.begin(9600);
+   Serial.println("Example written by Coloz From Arduin.CN");
+   pinMode(beeppin,OUTPUT);      //设置蜂鸣器引脚输出模式
+   lcd.initial_LCD1602();
+   delay(1000);
+}
+
+void loop() {
+   a=sr04.Distance();
+   Serial.print(a);
+   Serial.println("cm");
+   int distance=(int)a;
+   //************************************************************************
+   lcd.SET_XY(2, 0);
+   lcd.Write_data(a, 4); 
+   
+  
+  /*lcd.Write_Char('c');
+  lcd.SET_XY(4, 1);
+  lcd.Write_String(str1); //第2行，第5个地址起,打印str2*/
+  //while (1);
+   //************************************************************************
+   //输出距离值
+  
+  if(distance>100)            
+  {
+    
+  }
+  else if(distance<10)            
+  {
+    buzzer11();
+  }
+  else if(distance<20)            
+  {
+    buzzer1();
+  }
+  else if(distance<35)            
+  {
+    buzzer12();
+  }
+  else if (distance<=50)   
+  {
+    buzzer2();
+  }
+  else if (distance<=60)   
+  {
+    buzzer21();
+  }
+  else if(distance<=80)
+  {
+    buzzer3();
+  }
+  else{
+    
+  }
+   delay(100);
+}
+void buzzer1()
+{
+  tone(beeppin,900);
+  delay(100);  
+  noTone(beeppin);
+}
+ 
+void buzzer2()
+{
+  tone(beeppin,600);
+  delay(150);  
+  noTone(beeppin);
+}
+void buzzer21()
+{
+  tone(beeppin,200);
+  delay(300);  
+  noTone(beeppin);
+}
+void buzzer3()  
+{
+  tone(beeppin,300);
+  delay(500);  
+  noTone(beeppin);
+}
+void buzzer11()
+{
+  tone(beeppin,1200);
+  delay(50);  
+  noTone(beeppin);
+}
+ void buzzer12()
+{
+  tone(beeppin,750);
+  delay(200);  
+  noTone(beeppin);
+}

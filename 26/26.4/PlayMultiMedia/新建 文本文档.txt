@@ -1,0 +1,243 @@
+首先你要把ShockwaveFlash控件加进去。   
+  步骤：菜单Component->Import   ActiveX   Control   
+  在ListBox中选择ShockwaveFlash   然后点击Install   
+  一步步走下去，在最后选择Compie   
+  在ActiveX中就有了Shockwave   Flash控件了   
+  在FormCreat事件写：   
+  ShockwaveFlash1->Movie="d:\\bei\\index.swf";   
+  ShockwaveFlash1->Play();   
+  就是你的文件及其路径   
+
+
+
+void   CXXXXView::ShowPic()   
+  {   
+  CString   strPath;   
+  CFileDialog   dlg(TRUE,"jpg","*.jpg",     
+  OFN_HIDEREADONLY|OFN_OVERWRITEPROMPT,     
+  "JPEG文件(*.jpg)|*.jpg|GIF文件(*.gif)|*.gif||",NULL);     
+  if(dlg.DoModal()==IDOK)   
+  {     
+  strPath=dlg.GetPathName();     
+    
+  CDC*   pDC=this->GetDC();   
+    
+  IStream   *pStm;       
+  CFileStatus   fstatus;       
+  CFile   file;       
+  LONG   cb;       
+    
+  HGLOBAL   hGlobal;   
+  if   (file.Open(strPath,CFile::modeRead)&&file.GetStatus(strPath,fstatus)&&   ((cb   =   fstatus.m_size)   !=   -1))       
+  {       
+  hGlobal   =   GlobalAlloc(GMEM_MOVEABLE,   cb);       
+  LPVOID   pvData   =   NULL;       
+  if   (hGlobal   !=   NULL)       
+  {       
+  if   ((pvData   =   GlobalLock(hGlobal))   !=   NULL)       
+  {       
+  file.ReadHuge(pvData,   cb);       
+  GlobalUnlock(hGlobal);       
+  CreateStreamOnHGlobal(hGlobal,   TRUE,   &pStm);       
+  }   
+  }   
+  file.Close();   
+  }   
+            
+    
+    
+  IPicture   *pPic;     //想不到，竟然使用了一个com组件   
+    
+  if(SUCCEEDED(OleLoadPicture(pStm,fstatus.m_size,TRUE,IID_IPicture,(LPVOID*)&pPic)))     
+  {     
+  OLE_XSIZE_HIMETRIC   hmWidth;       
+  OLE_YSIZE_HIMETRIC   hmHeight;       
+  pPic->get_Width(&hmWidth);       
+  pPic->get_Height(&hmHeight);       
+  double   fX,fY;       
+    
+  fX   =   (double)pDC->GetDeviceCaps(HORZRES)*(double)hmWidth/((double)pDC->GetDeviceCaps(HORZSIZE)*100.0);       
+  fY   =   (double)pDC->GetDeviceCaps(VERTRES)*(double)hmHeight/((double)pDC->GetDeviceCaps(VERTSIZE)*100.0);       
+  if(FAILED(pPic->Render(*pDC,0,0,(DWORD)fX,(DWORD)fY,0,hmHeight,hmWidth,-hmHeight,NULL)))       
+  AfxMessageBox("渲染图像失败！");       
+  pPic->Release();       
+  }       
+  else       
+  AfxMessageBox("从流中装载图像失败！");       
+    
+  GlobalFree(hGlobal);   
+  }   
+    
+  }   
+
+
+
+
+
+  　　一、 引言 
+
+　　JPEG图像压缩标准随然是一种有损图像压缩标准，但由于人眼视觉的不敏感，经压缩后的画质基本没有发生变化，很快便以较高的压缩率得到了广泛的认可。GIF格式虽然仅支持256色但它对于颜色较少的图像有着很高的压缩率，甚至超过JPEG标准，也得到了广泛的认同。但作为众多程序员的一个重要的开发工具--Microsoft Visual C++ 6.0的MFC库却仅对没有经过任何压缩的BMP位图文件有着良好的支持，可以读取、显示、存储甚至在内存中创建一块内存位图。由于BMP格式的图像没有经过任何的压缩，不论是作为程序的外部文件，还是作为程序的内部资源都要占据大量的空间，尤其是后者会大大增加可执行文件的长度。可以看出，如果能用经过压缩、具有较好的压缩率的JPEG或GIF格式的图像来取代BMP文件在VC中的应用，无疑还是很有吸引力的。 
+
+　　二、 设计思路 
+
+　　虽然有一些操作、处理JPEG、GIF等其他格式图像的Active X控件，但总的来说使用起来并不太方便，笔者经过实验摸索，总结出了一种借助于COM接口的OLE方法来实现上述功能的一种简便方法，现介绍如下以飨广大读者： 
+
+　　下面我们要使用IPicture 的COM接口，有必要对该图像接口做些了解：该接口主要管理图像对象及其属性，图像对象为 位图、图标和图元等提供一种与语言无关的抽象。和标准的字体对象一样，系统也提供了对图像对象的标准实现。其主要的接口是IPicture和IPictureDisp，后者是由IDispatch接口派生以便通过自动化对图像的属性进行访问。图像对象也支持外部接口IPropertyNotifySink，以便用户能在图像属性发生改变时作出决定。图像对象也支持IPersistStream接口，所以它能从一个IStream接口的实例对象保存、装载自己，而IStream接口也支持对流对象的数据读写。 
+
+　　我们可以用函数OleLoadPicture从包含有图像数据的流中装载图像。该函数简化了基于流的图像对象的创建过程，可以创建一个新的图像对象并且用流中的内容对它进行初始化。其函数原型为： 
+
+　　 
+
+　　STDAPI OleLoadPicture( IStream * pStream, //指向包含有图像数据的流的指针 
+
+　　LONG lSize, //从流中读取的字节数 
+
+　　BOOL fRunmode, //图像属性对应的初值 
+
+　　REFIID riid, //涉及到的接口标识，描述要返回的接口指针的类型 
+
+　　VOID ppvObj // 在rrid中用到的接口指针变量的地址) ; 
+
+　　三、 具体的实现 
+
+　　在显示图像之前，首先要获取到图像文件的存放路径，这里采用标准的文件打开对话框来选取图像文件，文件名存放在CString 型的变量m_sPath中： 
+
+　　 
+
+　　CFileDialog dlg(TRUE,"jpg","*.jpg", 
+
+　　OFN_HIDEREADONLY　OFN_OVERWRITEPROMPT, 
+
+　　"JPEG文件(*.jpg)　*.jpg　GIF文件(*.gif)　*.gif　　",NULL); 
+
+　　if(dlg.DoModal()==IDOK) 
+
+　　{ 
+
+　　　m_sPath=dlg.GetPathName(); 
+
+　　　Invalidate(); 
+
+　　} 
+
+　　为简单计，图形显示的代码直接在视类中的OnDraw中编写，首先打开文件并判断文件的可用性，并把文件内容放到流接口IStream的对象pStm中： 
+
+　　 
+
+　　IStream *pStm; 
+
+　　CFileStatus fstatus; 
+
+　　CFile file; 
+
+　　LONG cb; 
+
+　　…… 
+
+　　if (file.Open(m_Path,CFile::modeRead)&&file.GetStatus(m_Path,fstatus)&& ((cb = fstatus.m_size) != -1)) 
+
+　　{ 
+
+　　　HGLOBAL hGlobal = GlobalAlloc(GMEM_MOVEABLE, cb); 
+
+　　　LPVOID pvData = NULL; 
+
+　　　if (hGlobal != NULL) 
+
+　　　{ 
+
+　　　　if ((pvData = GlobalLock(hGlobal)) != NULL) 
+
+　　　　{ 
+
+　　　　　file.ReadHuge(pvData, cb); 
+
+　　　　　GlobalUnlock(hGlobal); 
+
+　　　　　CreateStreamOnHGlobal(hGlobal, TRUE, &pStm); 
+
+　　　　} 
+
+　　　} 
+
+　　} 
+
+　　然后，就直接调用OleLoadPicture函数从流中装载图像： 
+
+　　 
+
+　　IPicture *pPic; 
+
+　　…… 
+
+　　OleLoadPicture(pStm,fstatus.m_size,TRUE,IID_IPicture,(LPVOID*)&pPic)); 
+
+　　由于该函数有时会导致失败，所以应当用SUCCEEDED宏来做一些适当的保护工作,只有在数据装载成功的前提下才能继续下面的图像显示工作： 
+
+　　 
+
+　　if(SUCCEEDED(OleLoadPicture(pStm,fstatus.m_size,TRUE,IID_IPicture,(LPVOID*)&pPic))) 
+
+　　{ 
+
+　　　OLE_XSIZE_HIMETRIC hmWidth; 
+
+　　　OLE_YSIZE_HIMETRIC hmHeight; 
+
+　　　pPic->get_Width(&hmWidth); 
+
+　　　pPic->get_Height(&hmHeight); 
+
+　　　double fX,fY; 
+
+　　　…… 
+
+　　　fX = (double)pDC->GetDeviceCaps(HORZRES)*(double)hmWidth/((double)pDC->GetDeviceCaps(HORZSIZE)*100.0); 
+
+　　　fY = (double)pDC->GetDeviceCaps(VERTRES)*(double)hmHeight/((double)pDC->GetDeviceCaps(VERTSIZE)*100.0); 
+
+　　　if(FAILED(pPic->Render(*pDC,0,0,(DWord)fX,(DWORD)fY,0,hmHeight,hmWidth,-hmHeight,NULL))) { 
+
+　　　　AfxMessageBox("渲染图像失败！"); 
+
+　　　　pPic->Release(); 
+
+　　　} 
+
+　　　else 
+
+　　　AfxMessageBox("从流中装载图像失败！"); 
+
+　　} 
+
+　　其中，显示工作主要是由IPicture接口对象的Render函数来完成的，该函数主要用来将图片的指定部分画到指定的设备环境的指定位置。原型如下： 
+
+　　 
+
+　　HRESULT Render( HDC hdc, //渲染图像用的设备环境句柄 
+
+　　long x, //在hdc上的水平坐标 
+
+　　long y, //在hdc上的垂直坐标 
+
+　　long cx, //图像宽度 
+
+　　long cy, //图像高度 
+
+　　OLE_XPOS_HIMETRIC xSrc, //在源图像上的水平偏移 
+
+　　OLE_YPOS_HIMETRIC ySrc, //在源图像上的垂直偏移 
+
+　　OLE_XSIZE_HIMETRIC cxSrc,//在源图像上水平拷贝的数量 
+
+　　OLE_YSIZE_HIMETRIC cySrc,//在源图像上垂直拷贝的数量 
+
+　　LPCRECT prcWBounds //指向目标图元设备环境句柄的指针); 
+
+　　小结： 
+
+　　到此为止，通过上述代码已经能够在程序的客户区内显示JPEG、GIF等标准的图像了，但对于有多帧图片（即有动画）的GIF格式的图像，目前还只能显示第一帧，如要完整的显示GIF 动画的全过程，还需要外部Active X控件的支持。 
+
+
+  
+  

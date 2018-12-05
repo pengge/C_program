@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLLAppSample", "DLLAppSample.vcxproj", "{E3B8DA23-921A-8C38-E862-5FD4380BAA16}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GreenDLL", "GreenDLL\GreenDLL.vcxproj", "{B10A896E-F972-8EA4-6A44-F4AEB89ACEFF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RedDLL", "RedDLL\RedDLL.vcxproj", "{1A1ECD82-45B3-5CF0-B435-C429A1FD7805}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShieldKeyBordSample", "ShieldKeyBordSample\ShieldKeyBordSample.vcxproj", "{324AAEE7-A239-634A-6DED-733A0F0847CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3B8DA23-921A-8C38-E862-5FD4380BAA16}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E3B8DA23-921A-8C38-E862-5FD4380BAA16}.Debug|Win32.Build.0 = Debug|Win32
+		{E3B8DA23-921A-8C38-E862-5FD4380BAA16}.Release|Win32.ActiveCfg = Release|Win32
+		{E3B8DA23-921A-8C38-E862-5FD4380BAA16}.Release|Win32.Build.0 = Release|Win32
+		{E3B8DA23-921A-8C38-E862-5FD4380BAA16}.Template|Win32.ActiveCfg = Template|Win32
+		{E3B8DA23-921A-8C38-E862-5FD4380BAA16}.Template|Win32.Build.0 = Template|Win32
+		{B10A896E-F972-8EA4-6A44-F4AEB89ACEFF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B10A896E-F972-8EA4-6A44-F4AEB89ACEFF}.Debug|Win32.Build.0 = Debug|Win32
+		{B10A896E-F972-8EA4-6A44-F4AEB89ACEFF}.Release|Win32.ActiveCfg = Release|Win32
+		{B10A896E-F972-8EA4-6A44-F4AEB89ACEFF}.Release|Win32.Build.0 = Release|Win32
+		{B10A896E-F972-8EA4-6A44-F4AEB89ACEFF}.Template|Win32.ActiveCfg = Template|Win32
+		{B10A896E-F972-8EA4-6A44-F4AEB89ACEFF}.Template|Win32.Build.0 = Template|Win32
+		{1A1ECD82-45B3-5CF0-B435-C429A1FD7805}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A1ECD82-45B3-5CF0-B435-C429A1FD7805}.Debug|Win32.Build.0 = Debug|Win32
+		{1A1ECD82-45B3-5CF0-B435-C429A1FD7805}.Release|Win32.ActiveCfg = Release|Win32
+		{1A1ECD82-45B3-5CF0-B435-C429A1FD7805}.Release|Win32.Build.0 = Release|Win32
+		{1A1ECD82-45B3-5CF0-B435-C429A1FD7805}.Template|Win32.ActiveCfg = Template|Win32
+		{1A1ECD82-45B3-5CF0-B435-C429A1FD7805}.Template|Win32.Build.0 = Template|Win32
+		{324AAEE7-A239-634A-6DED-733A0F0847CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{324AAEE7-A239-634A-6DED-733A0F0847CD}.Debug|Win32.Build.0 = Debug|Win32
+		{324AAEE7-A239-634A-6DED-733A0F0847CD}.Release|Win32.ActiveCfg = Release|Win32
+		{324AAEE7-A239-634A-6DED-733A0F0847CD}.Release|Win32.Build.0 = Release|Win32
+		{324AAEE7-A239-634A-6DED-733A0F0847CD}.Template|Win32.ActiveCfg = Template|Win32
+		{324AAEE7-A239-634A-6DED-733A0F0847CD}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

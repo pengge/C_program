@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RegMFCDLLSample", "RegMFCDLLSample.vcxproj", "{420BF851-1065-C4D7-2AA5-B7B665769AEF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RegMFCDllTest", "RegMFCDllTest\RegMFCDllTest.vcxproj", "{6C4BAA5F-78FE-CF53-6DA0-863565D7C7D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{420BF851-1065-C4D7-2AA5-B7B665769AEF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{420BF851-1065-C4D7-2AA5-B7B665769AEF}.Debug|Win32.Build.0 = Debug|Win32
+		{420BF851-1065-C4D7-2AA5-B7B665769AEF}.Release|Win32.ActiveCfg = Release|Win32
+		{420BF851-1065-C4D7-2AA5-B7B665769AEF}.Release|Win32.Build.0 = Release|Win32
+		{420BF851-1065-C4D7-2AA5-B7B665769AEF}.Template|Win32.ActiveCfg = Template|Win32
+		{420BF851-1065-C4D7-2AA5-B7B665769AEF}.Template|Win32.Build.0 = Template|Win32
+		{6C4BAA5F-78FE-CF53-6DA0-863565D7C7D9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6C4BAA5F-78FE-CF53-6DA0-863565D7C7D9}.Debug|Win32.Build.0 = Debug|Win32
+		{6C4BAA5F-78FE-CF53-6DA0-863565D7C7D9}.Release|Win32.ActiveCfg = Release|Win32
+		{6C4BAA5F-78FE-CF53-6DA0-863565D7C7D9}.Release|Win32.Build.0 = Release|Win32
+		{6C4BAA5F-78FE-CF53-6DA0-863565D7C7D9}.Template|Win32.ActiveCfg = Template|Win32
+		{6C4BAA5F-78FE-CF53-6DA0-863565D7C7D9}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

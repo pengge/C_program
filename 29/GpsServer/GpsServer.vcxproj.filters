@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e7620c0d-dd26-4f32-a2cc-95b9282f6b8e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\RS-cpp">
+      <UniqueIdentifier>{4cc95a0c-b0e0-4bc1-ad56-5f943c0153ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View-cpp">
+      <UniqueIdentifier>{530664f8-8d30-4096-b75e-7413d5d00457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\COM-cpp">
+      <UniqueIdentifier>{a183b4b8-c7ab-4d8f-8df2-9461aa917ae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CJ60-cpp">
+      <UniqueIdentifier>{1479b63d-6974-4b1a-ac65-ab142999e7f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9a8810b3-cad2-49ef-b799-25333e6046ba}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\View-h">
+      <UniqueIdentifier>{0007e86a-1189-4441-93b8-9662e876da1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\COM-h">
+      <UniqueIdentifier>{62681cd6-72e7-4f96-a3e7-270396ca3a69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RS-h">
+      <UniqueIdentifier>{e21afe3a-0590-4142-900e-4c0ba79fdabd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CJ60-h">
+      <UniqueIdentifier>{fe79871e-ecf9-44d5-9f99-7df8c5dfaec1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c1ae3d22-00ce-42e3-b385-0e065b94d2a8}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RSComConfig.cpp">
+      <Filter>Source Files\RS-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="RSUser.cpp">
+      <Filter>Source Files\RS-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgComConfig.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLogin.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewBase.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewComData.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewLog.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewNemaData.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewReceiveData.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewReceivePosition.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewSendData.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewTreeCom.cpp">
+      <Filter>Source Files\View-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ComWorkFlow.cpp">
+      <Filter>Source Files\COM-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFlow.cpp">
+      <Filter>Source Files\COM-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="GPSPublic.cpp">
+      <Filter>Source Files\COM-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadCom.cpp">
+      <Filter>Source Files\COM-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CJButton.cpp">
+      <Filter>Source Files\CJ60-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CJControlBar.cpp">
+      <Filter>Source Files\CJ60-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CJTabctrlBar.cpp">
+      <Filter>Source Files\CJ60-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="GpsServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GpsServerDoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GpsServerView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GpsServer.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DlgComConfig.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLogin.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewBase.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewComData.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewLog.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewNemaData.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewReceiveData.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewReceivePosition.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewSendData.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewTreeCom.h">
+      <Filter>Header Files\View-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ComWorkFlow.h">
+      <Filter>Header Files\COM-h</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFlow.h">
+      <Filter>Header Files\COM-h</Filter>
+    </ClInclude>
+    <ClInclude Include="GPSPublic.h">
+      <Filter>Header Files\COM-h</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadCom.h">
+      <Filter>Header Files\COM-h</Filter>
+    </ClInclude>
+    <ClInclude Include="RSComConfig.h">
+      <Filter>Header Files\RS-h</Filter>
+    </ClInclude>
+    <ClInclude Include="RSUser.h">
+      <Filter>Header Files\RS-h</Filter>
+    </ClInclude>
+    <ClInclude Include="CJButton.h">
+      <Filter>Header Files\CJ60-h</Filter>
+    </ClInclude>
+    <ClInclude Include="CJControlBar.h">
+      <Filter>Header Files\CJ60-h</Filter>
+    </ClInclude>
+    <ClInclude Include="CJTabCtrlBar.h">
+      <Filter>Header Files\CJ60-h</Filter>
+    </ClInclude>
+    <ClInclude Include="GpsServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GpsServerDoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GpsServerView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PUBLIC.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\GpsServer.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\GpsServer.rc2">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\idr_main.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\HLP.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\RESOURCE.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\GpsServer.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
